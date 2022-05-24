@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.1-dist/fontawesome-free-6.0.0-web/css/all.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.1-dist/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="/bootstrap-4.6.1-dist/icons-1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<style>
+    .my-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: none;
+        transition: 0.2s;
+        position: relative;
+        width: 100px;
+        
+        color: rgb(0, 0, 0);
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        transition: 1s;
+    }
+    .my-btn::after{
+        content: "";
+        position: absolute; 
+        background: none;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid rgb(0, 255, 234);
+        border-bottom: 2px solid rgb(0, 255, 234);
+        transition: 0.5s;
+        transform: scaleY(0);
+        
+        
+    }
+
+    .my-btn:hover:after{
+        transform: scaleY(1);
+        transition: 0.3s;
+    }
+    .my-btn::before{
+        content: "";
+        background-color: black;
+        position: absolute;
+        width: 0;
+        height: 0;
+        transition: 0.2s;
+    }
+    .my-btn:hover::before{
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+    }
+</style>
+<body>
+    <h1>Java Script</h1>
+   <div>
+    <input type="text" id="t" onfocus="this.value=''">
+    <input type="text" id="t1"> <br>
+    <select name="" id="sec">
+        <option value="">choose number</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+    </select>
+    <button onclick="cl()" >ok</button>
+
+<p id="d"></p>
+   </div>
+  <button class="my-btn">click</button>
+       
+</body>
+<script src="/bootstrap-4.6.1-dist/jquery.min.js"></script>
+<script src="/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+<script src="/bootstrap-4.6.1-dist/popper.min.js"></script>
+<script src="/bootstrap-4.6.1-dist/fontawesome-free-6.0.0-web/js/all.js"></script>
+<script src="/bootstrap-4.6.1-dist/fontawesome-free-6.0.0-web/js/all.min.js"></script>
+<script>
+    let list = [2000,2001,1999,1900]
+
+    function getlist(arr, fun){
+       let n=[]
+      
+        for (let i=0; i<arr.length; i++)
+        {
+            let nn = fun(arr[i])
+            n.push(nn)
+        }
+        return n
+    }
+function cal(cals){
+    return 2022-cals;
+}
+let n = getlist(list, cal)
+
+console.log(n)
+console.clear()
+var x=5
+function p(){
+    var y =10 
+    console.log(x)
+    var x =20
+
+}
+console.log(p())
+var s=10
+
+console.log(s)
+
+console.log(s)
+function random(number) {
+    var x = (Math.random()*number).toFixed(0);
+    return x
+}
+function cc(){
+    document.getElementById("t").value="ok"
+}
+if(document.getElementById("t").true){
+    document.getElementById("t").value="ok"
+}
+
+function cl()
+{
+    var i1=document.getElementById("t").value;
+    var i2=document.getElementById("t1").value;
+    var i3=document.getElementById("sec").value;
+    
+    if (isNaN(i1)||i3=="")
+    {
+        document.getElementById("t").style.border="2px solid red"
+        document.getElementById("t").style.color="red"
+        document.getElementById("t").value="NAN"
+       
+        
+            
+        
+    }
+    else
+    {
+        var w
+        //convert string to number
+        console.log("number:", (Math.floor(i1)+12))
+            var x=""
+        for (var q=0;q<=i3;q++)
+        {
+            
+            x=x+random(i1)+"<br>"
+        }
+    document.getElementById("d").innerHTML=x
+    } 
+}
+var i3=document.getElementById("sec").value;
+    
+</script>
+</html>
